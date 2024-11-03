@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form class="row g-3 needs-validation">
+        <div class="col-md-4">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+          <div class="invalid-feedback">
+            Please enter your name.
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" id="email" class="form-control" placeholder="Enter your mail ID" required>
+          <div class="invalid-feedback">
+            Please enter a valid email address.
+          </div>
+        </div>
+        
+        <div class="col-md-8">
+          <label for="text" class="form-label">Message:</label>
+          <textarea id="text" class="form-control" placeholder="Type your message..." required></textarea>
+          <div class="invalid-feedback">
+            Please enter your message.
+          </div>
+        </div>
+        
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+      
+      <script>
+        // Bootstrap validation example
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+      </script>
+</body>
+</html>
+
